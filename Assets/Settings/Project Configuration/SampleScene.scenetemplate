@@ -66,7 +66,7 @@ MonoBehaviour:
     UI and other examples of best-practices for VR development.
   preview: {fileID: -313791287703854912}
   dependencies:
-  - dependency: {fileID: 2800000, guid: 1ed6c1c5fa7989e4597a77c8148b0876, type: 3}
+  - dependency: {fileID: 2100000, guid: e8182517e5fb74b6fa22ea575de80592, type: 2}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: df9023114d04044448b061e46927ce9d, type: 3}
     instantiationMode: 0
@@ -198,6 +198,8 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 919132149155446097, guid: 5833e680dc0f7ae47aec6b4286570484, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 2100000, guid: 69fc6c304eda145f4b6de9b85c846b98, type: 2}
+    instantiationMode: 0
   - dependency: {fileID: 6804990658058999119, guid: 65c9f6563c561ee4e8905d1e6a32548b, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2100000, guid: 4b40dbb00777f2141a8ff7278f450856, type: 2}
@@ -244,13 +246,15 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 7474c63c5c65b1b4fa45a47bd1bf528f, type: 3}
     instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 139237a044d8e4255b40bb472c842087, type: 3}
+  - dependency: {fileID: 2800000, guid: d962094b1569b2a488f813051a429e39, type: 3}
     instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 1d56a2d39cfbb49149abbf0076259327, type: 3}
+  - dependency: {fileID: 2800000, guid: 139237a044d8e4255b40bb472c842087, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 65d31ca9600c4654e886aa7bab36e94b, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 08548d5ac6b7bc64da0b332636c5cc91, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 2800000, guid: 1d56a2d39cfbb49149abbf0076259327, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 1688796160857414, guid: 71d42f13891e48c4487496fd15802eda, type: 3}
     instantiationMode: 0
@@ -289,8 +293,6 @@ MonoBehaviour:
   - dependency: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 3625037896966406280, guid: a737d62f4ff0b854a9d767507f039686, type: 3}
-    instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 476d8958242d6014fb5ae5916a7e9815, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 89cb99e3e22696848a1cbce7b320f520, type: 3}
     instantiationMode: 0
