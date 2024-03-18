@@ -32,8 +32,8 @@ public class enemy : MonoBehaviour
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
         Position = transform.position;
-        x = Position.x;
-        z = Position.z;
+        x = Position.x -8;
+        z = Position.z -10;
         plusx_z = Math.Pow(x,2) + Math.Pow(z,2); 
         y = Math.Sqrt(plusx_z);
         speedx = -x % y;
