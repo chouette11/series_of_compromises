@@ -11,7 +11,7 @@ public class WebSocketClient : MonoBehaviour
     void Start()
     {
         // WebSocketサーバーのURLを指定して接続
-        ws = new WebSocket("ws://192.168.128.176:8080");
+        ws = new WebSocket("ws://192.168.11.83:8080");
         Debug.Log("open!");
         ws.OnOpen += (sender, e) =>
         {
