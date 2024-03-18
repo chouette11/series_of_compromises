@@ -6,18 +6,31 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+        private Animator Anim;
+    private CharacterController Ctrl;
+    private Vector3 MoveDirection = Vector3.zero;
+        private static readonly int IdleState = Animator.StringToHash("Base Layer.idle");
+     private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
+     private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
+     private static readonly int AttackState = Animator.StringToHash("Base Layer.attack_shift");
+     private static readonly int DissolveState = Animator.StringToHash("Base Layer.dissolve");
+     private static readonly int AttackTag = Animator.StringToHash("Attack");
     private Vector3 Position;
     private double x;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   private double y;
+    private double y;
     private  double plusx_z;
     private double z;
     private double speedx;
     private double speedz;
     private float fspx;
     private float fspz;
+    private float span =0;
     // Start is called before the first frame update
     void Start()
     {
+        
+        Anim = this.GetComponent<Animator>();
+        Ctrl = this.GetComponent<CharacterController>();
         Position = transform.position;
         x = Position.x;
         z = Position.z;
@@ -39,8 +52,15 @@ public class enemy : MonoBehaviour
     }
     void OnCollisionEnter(Collision other) {
         if (other.gameObject.tag == "bullet"){
-              Destroy(gameObject);
+             Anim.CrossFade( DissolveState , 0.1f, 0, 0);
+          
+                Destroy(gameObject);
+             
+              
         }
+
+    }
+    void Attack (){
 
     }
 }
