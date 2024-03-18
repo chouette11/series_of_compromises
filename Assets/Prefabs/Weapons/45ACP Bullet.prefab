@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4990278429729720238}
   m_Layer: 0
   m_Name: 45ACP Bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09178fb77ac97f14ab9080215903ae3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletSpeed: 1
+  m_bulletSpeed: 10
 --- !u!1001 &3724705277012589230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UCP45 Bullet Head
       objectReference: {fileID: 0}
+    - target: {fileID: 7667026902598471980, guid: 65c9f6563c561ee4e8905d1e6a32548b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69fc6c304eda145f4b6de9b85c846b98, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -153,6 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 45ACP Bullet_Casing
       objectReference: {fileID: 0}
+    - target: {fileID: 8397418048601817103, guid: 4cb20e8abae957146a8b78e670d3fe74, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 69fc6c304eda145f4b6de9b85c846b98, type: 2}
     - target: {fileID: 8698172140991394757, guid: 4cb20e8abae957146a8b78e670d3fe74, type: 3}
       propertyPath: m_RootOrder
       value: 1
