@@ -14,7 +14,6 @@ public class AssignedId : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("assigned");
-        Debug.Log(id);
+       
     }
 }
