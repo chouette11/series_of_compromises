@@ -26,17 +26,26 @@ public class enemy : MonoBehaviour
     private float fspz;
     private float span = 0;
     private bool on_off = true;
+    public GameObject tower;
+    private int enemyHP;
+    private float distancespan;
+    private towescript towerscript;
+    private float AttackSpan;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyHP = 3;
         span = 0;
-
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
+    }
+
+    void Distance()
+    {
         Position = transform.position;
-        x = Position.x - 8;
-        z = Position.z - 10;
+        x = Position.x - tower.transform.position.x;
+        z = Position.z - tower.transform.position.z;
         plusx_z = Math.Pow(x, 2) + Math.Pow(z, 2); 
         y = Math.Sqrt(plusx_z);
         speedx = -x % y;
@@ -48,16 +57,19 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        distancespan += Time.deltaTime;
         transform.position += new Vector3(fspx * 0.1f, 0, fspz * 0.1f) * Time.deltaTime;
-        if (on_off == false)
+        if (enemyHP <= 0)
         {
             span += Time.deltaTime;
-            
             if (span >= 0.4f)
             {
                 Destroy(gameObject);
             }
+        }
+        if (distancespan >= 5f)
+        {
+            Distance();
         }
     }
 
@@ -66,7 +78,26 @@ public class enemy : MonoBehaviour
         if (collision.gameObject.tag == "bullet")
         {
             Anim.CrossFade(DissolveState, 0.1f, 0, 0);
-            on_off = false;
+            enemyHP = enemyHP - 1;
         }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "tower")
+        {
+            AttackSpan += Time.deltaTime;
+            if (AttackSpan >= 1f)
+            {
+                Attack();
+            }
+        }
+    }
+
+    void Attack()
+    {
+        towerscript = tower.GetComponent<towescript>();
+        towerscript.Hpmanage = false;
+        AttackSpan = 0;
     }
 }
