@@ -26,7 +26,7 @@ public class enemy : MonoBehaviour
     private float fspz;
     private float span = 0;
     private bool on_off = true;
-    public GameObject tower;
+    private GameObject tower;
     private int enemyHP;
     private float distancespan;
     private towescript towerscript;
@@ -35,6 +35,7 @@ public class enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tower = GameObject.Find("tower");
         enemyHP = 3;
         span = 0;
         Anim = this.GetComponent<Animator>();
