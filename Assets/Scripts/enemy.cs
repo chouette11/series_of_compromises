@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using WebSocketSharp;
 
 public class enemy : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class enemy : MonoBehaviour
     private float distancespan;
     private towescript towerscript;
     private float AttackSpan;
+    private WebSocketClient webSocketClient;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,7 @@ public class enemy : MonoBehaviour
         span = 0;
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
+        webSocketClient = GameObject.Find("WebsocketFloor").GetComponent<WebSocketClient>();
     }
 
     void Distance()
@@ -58,13 +63,19 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        string id = gameObject.GetComponent<AssignedId>().id;
+        SendPositionData sendPositionData = new SendPositionData(Position.x / 16, Position.y, Position.z / 20, id, "enemy", true, "unity");
+        webSocketClient.SendMessageToServer(sendPositionData);
         distancespan += Time.deltaTime;
-        transform.position += new Vector3(fspx * 0.1f, 0, fspz * 0.1f) * Time.deltaTime;
+        transform.position += new Vector3(fspx * 0.5f, 0, fspz * 0.5f) * Time.deltaTime;
         if (enemyHP <= 0)
         {
             span += Time.deltaTime;
             if (span >= 0.4f)
             {
+                Position = transform.position;
+                sendPositionData = new SendPositionData(Position.x, Position.y, Position.z, id, "enemy", false, "unity");
+                webSocketClient.SendMessageToServer(sendPositionData);
                 Destroy(gameObject);
             }
         }
