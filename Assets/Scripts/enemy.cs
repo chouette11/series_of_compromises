@@ -31,16 +31,18 @@ public class enemy : MonoBehaviour
     private float disancesaan;
     private towescript towerscript;
     private float AttackSpan;
+
     // Start is called before the first frame update
     void Start()
-    { enemyHP = 3;
+    {
+        enemyHP = 3;
         span = 0;
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
-
-
     }
-void Distance (){
+
+    void Distance()
+    {
         Position = transform.position;
         x = Position.x - tower.transform.position.x;
         z = Position.z - tower.transform.position.z;
@@ -50,7 +52,8 @@ void Distance (){
         speedz = -z % y;
         fspx = (float)speedx;
         fspz = (float)speedz;
-}
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -59,15 +62,14 @@ void Distance (){
         if (enemyHP <= 0)
         {
             span += Time.deltaTime;
-            
             if (span >= 0.4f)
             {
                 Destroy(gameObject);
             }
         }
-        if (disancesaan >= 5f){
-Distance();
-            
+        if (disancesaan >= 5f)
+        {
+            Distance();
         }
     }
 
@@ -78,21 +80,24 @@ Distance();
             Anim.CrossFade(DissolveState, 0.1f, 0, 0);
             enemyHP = enemyHP - 1;
         }
-        
     }
-void  OnTriggerStay(Collider other)
-{
-    if(other.gameObject.tag == "tower"){
-        AttackSpan += Time.deltaTime;
-        if (AttackSpan >= 1f){
-           Attack();
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "tower")
+        {
+            AttackSpan += Time.deltaTime;
+            if (AttackSpan >= 1f)
+            {
+                Attack();
+            }
         }
-   
     }
-}
-void Attack(){
-towerscript = tower.GetComponent<towescript>();
-towerscript.Hpmanage = false;
-AttackSpan =0;
-}
+
+    void Attack()
+    {
+        towerscript = tower.GetComponent<towescript>();
+        towerscript.Hpmanage = false;
+        AttackSpan = 0;
+    }
 }
