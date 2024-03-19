@@ -34,6 +34,8 @@ public class enemy : MonoBehaviour
     private float AttackSpan;
     private WebSocketClient webSocketClient;
 
+    private string id;
+
 
 
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class enemy : MonoBehaviour
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
         webSocketClient = GameObject.Find("WebsocketFloor").GetComponent<WebSocketClient>();
+        id = gameObject.GetComponent<AssignedId>().id;
     }
 
     void Distance()
@@ -52,7 +55,7 @@ public class enemy : MonoBehaviour
         Position = transform.position;
         x = Position.x - tower.transform.position.x;
         z = Position.z - tower.transform.position.z;
-        plusx_z = Math.Pow(x, 2) + Math.Pow(z, 2); 
+        plusx_z = Math.Pow(x, 2) + Math.Pow(z, 2);
         y = Math.Sqrt(plusx_z);
         speedx = -x % y;
         speedz = -z % y;
@@ -63,25 +66,23 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string id = gameObject.GetComponent<AssignedId>().id;
-        SendPositionData sendPositionData = new SendPositionData(Position.x / 16, Position.y, Position.z / 20, id, "enemy", true, "unity");
-        webSocketClient.SendMessageToServer(sendPositionData);
         distancespan += Time.deltaTime;
         transform.position += new Vector3(fspx * 0.5f, 0, fspz * 0.5f) * Time.deltaTime;
         if (enemyHP <= 0)
         {
-            span += Time.deltaTime;
-            if (span >= 0.4f)
-            {
-                Position = transform.position;
-                sendPositionData = new SendPositionData(Position.x, Position.y, Position.z, id, "enemy", false, "unity");
-                webSocketClient.SendMessageToServer(sendPositionData);
-                Destroy(gameObject);
-            }
+            Position = transform.position;
+            SendPositionData sendPositionData = new SendPositionData(Position.x, Position.y, Position.z, id, "enemy", false, "unity");
+            webSocketClient.SendMessageToServer(sendPositionData);
+            Destroy(gameObject);
+
         }
-        if (distancespan >= 5f)
+        if (distancespan >= 0.01f)
         {
+            Vector3 position = transform.position;
+            SendPositionData sendPositionData = new SendPositionData(position.x / 16, position.y, position.z / 20, id, "enemy", true, "unity");
+            webSocketClient.SendMessageToServer(sendPositionData);
             Distance();
+            distancespan = 0;
         }
     }
 
