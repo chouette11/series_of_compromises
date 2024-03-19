@@ -23,9 +23,11 @@ public class WebSocketClient : MonoBehaviour
             Debug.Log("WebSocket Message Type: "  + ", Data: " + e.Data);
             Debug.Log(e.Data.GetType().ToString());
             Debug.Log(e.Data);
-           
-            LatestPosition = JsonUtility.FromJson<PositionData>(e.Data);
-            Debug.Log(LatestPosition.y.ToString());
+
+            if (!e.Data.Contains("サーバー")) {
+                LatestPosition = JsonUtility.FromJson<PositionData>(e.Data);
+                Debug.Log(LatestPosition.y.ToString());
+            }
         };
 
         ws.OnError += (sender, e) =>

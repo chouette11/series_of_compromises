@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31447476, g: 0.55195, b: 0.8223645, a: 1}
+  m_IndirectSpecularColor: {r: 0.3146913, g: 0.5520039, b: 0.82215047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.26532102, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -451,37 +452,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
---- !u!1 &1055707885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8240146597230664093, guid: 0ad9878af371c448e90e76e6d90ad3e3, type: 3}
-  m_PrefabInstance: {fileID: 6667606366768908602}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1055707892
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055707885}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0996125, y: 0.9919656, z: 0.68106455}
-  m_Center: {x: -0.04980467, y: 0.5265832, z: -0.07271597}
 --- !u!4 &1102389528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7711990767740999333, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
@@ -501,6 +480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemyobject: {fileID: 8240146597230664093, guid: 0ad9878af371c448e90e76e6d90ad3e3, type: 3}
   webSocketClient: {fileID: 1688452623}
+  tower: {fileID: 1714745415}
 --- !u!1 &1124169904
 GameObject:
   m_ObjectHideFlags: 0
