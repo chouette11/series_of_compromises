@@ -28,7 +28,7 @@ public class enemy : MonoBehaviour
     private bool on_off = true;
     public GameObject tower;
     private int enemyHP;
-    private float disancesaan;
+    private float distancespan;
     private towescript towerscript;
     private float AttackSpan;
 
@@ -57,7 +57,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        disancesaan += Time.deltaTime;
+        distancespan += Time.deltaTime;
         transform.position += new Vector3(fspx * 0.1f, 0, fspz * 0.1f) * Time.deltaTime;
         if (enemyHP <= 0)
         {
@@ -67,7 +67,7 @@ public class enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (disancesaan >= 5f)
+        if (distancespan >= 5f)
         {
             Distance();
         }
