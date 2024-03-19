@@ -17,10 +17,10 @@ public class UsePositionData : MonoBehaviour
 
             string id = webSocketClient.LatestPosition.id;
             Vector3 newPosition = new Vector3(webSocketClient.LatestPosition.x * 16, webSocketClient.LatestPosition.y, webSocketClient.LatestPosition.z * 20);
+            webSocketClient.LatestPosition = null;
             GameObject newGhost = Instantiate(Enemyobject, newPosition, tower.transform.rotation);
             newGhost.GetComponent<AssignedId>().id = id;
             //transform.position = newPosition;
-            webSocketClient.LatestPosition = null;
 
         }
     }
