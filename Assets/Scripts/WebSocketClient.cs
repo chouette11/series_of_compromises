@@ -25,8 +25,11 @@ public class WebSocketClient : MonoBehaviour
             Debug.Log(e.Data);
 
             if (!e.Data.Contains("サーバー")) {
-                LatestPosition = JsonUtility.FromJson<PositionData>(e.Data);
-                Debug.Log(LatestPosition.y.ToString());
+                if (e.Data.Contains("flutter"))
+                {
+                    LatestPosition = JsonUtility.FromJson<PositionData>(e.Data);
+                    Debug.Log(LatestPosition.y.ToString());
+                }
             }
         };
 
@@ -52,11 +55,14 @@ public class WebSocketClient : MonoBehaviour
     }
 
     // サーバーにメッセージを送信するメソッド
-    public void SendMessageToServer(string message)
+    public void SendMessageToServer(SendPositionData data)
     {
+        Debug.Log("呼び出された");
         if (ws != null && ws.IsAlive)
         {
-            ws.Send(message);
+            Debug.Log("生きている");
+            string json = JsonUtility.ToJson(data);
+            ws.Send(json);
         }
     }
 }
