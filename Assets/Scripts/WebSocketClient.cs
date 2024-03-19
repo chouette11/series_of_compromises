@@ -57,12 +57,8 @@ public class WebSocketClient : MonoBehaviour
     // サーバーにメッセージを送信するメソッド
     public void SendMessageToServer(SendPositionData data)
     {
-        Debug.Log("呼び出された");
-        if (ws != null && ws.IsAlive)
-        {
-            Debug.Log("生きている");
             string json = JsonUtility.ToJson(data);
             ws.Send(json);
-        }
+        
     }
 }
