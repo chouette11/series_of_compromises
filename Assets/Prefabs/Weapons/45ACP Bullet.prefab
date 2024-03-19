@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4396417133449288}
   - component: {fileID: 1067929284349639088}
   - component: {fileID: 4990278429729720238}
+  - component: {fileID: 727810116137562852}
   m_Layer: 0
   m_Name: 45ACP Bullet
   m_TagString: bullet
@@ -75,6 +76,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_bulletSpeed: 10
+--- !u!65 &727810116137562852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122964723992546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010881885, y: 0.009433369, z: 0.027516503}
+  m_Center: {x: -0.00007489361, y: 0.00013351739, z: 0.0132690165}
 --- !u!1001 &3724705277012589230
 PrefabInstance:
   m_ObjectHideFlags: 0

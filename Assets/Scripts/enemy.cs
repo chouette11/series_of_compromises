@@ -1,4 +1,4 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -25,9 +25,11 @@ public class enemy : MonoBehaviour
     private float fspx;
     private float fspz;
     private float span =0;
+    private bool on_off = true;
     // Start is called before the first frame update
     void Start()
     {
+        span = 0;
         
         Anim = this.GetComponent<Animator>();
         Ctrl = this.GetComponent<CharacterController>();
@@ -47,20 +49,24 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
+    Debug.Log(on_off);
         transform.position += new Vector3(fspx*0.1f, 0, fspz*0.1f) * Time.deltaTime;
-    }
-    void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "bullet"){
-             Anim.CrossFade( DissolveState , 0.1f, 0, 0);
-          
-                Destroy(gameObject);
-             
-              
+        if (on_off == false){
+       span += Time.deltaTime;
+       Debug.Log(span);
+   if (span >= 0.4f){
+    Destroy(gameObject);
+   }
         }
+    }
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "bullet"){
+             Anim.CrossFade( DissolveState , 0.1f, 0, 0);
+           on_off = false;
 
     }
-    void Attack (){
 
-    }
+ 
+}
 }
