@@ -16,7 +16,7 @@ public class PlayerPosition : MonoBehaviour
     void Update()
     {
         span += Time.deltaTime;
-        if (span >= 1f)
+        if (span >= 0.3f)
         {
             Vector3 headPosition = transform.position;
             Debug.Log("position");
