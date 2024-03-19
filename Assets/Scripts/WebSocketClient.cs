@@ -6,12 +6,12 @@ public class WebSocketClient : MonoBehaviour
     private WebSocket ws;
 
     // 受信した最新の位置データ
-    public PositionData LatestPosition { get; private set; }
+    public PositionData LatestPosition { get; set; }
 
     void Start()
     {
         // WebSocketサーバーのURLを指定して接続
-        ws = new WebSocket("ws://192.168.11.83:8080");
+        ws = new WebSocket("ws://35.77.220.248:8080");
         Debug.Log("open!");
         ws.OnOpen += (sender, e) =>
         {
