@@ -355,6 +355,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436817209}
   m_CullTransparentMesh: 1
+--- !u!1 &700493593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9131345087316671978, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+  m_PrefabInstance: {fileID: 4679656564254759316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &700493595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700493593}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45110de5083e1424f8a536df01b0b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &813050808
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +488,23 @@ MonoBehaviour:
   Enemyobject: {fileID: 8240146597230664093, guid: 0ad9878af371c448e90e76e6d90ad3e3, type: 3}
   webSocketClient: {fileID: 1688452623}
   tower: {fileID: 1714745415}
+--- !u!1 &1120628014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8145320936507957805, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+  m_PrefabInstance: {fileID: 4679656564254759316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1120628021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120628014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45110de5083e1424f8a536df01b0b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1124169904
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +536,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1102389528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1350873034 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7412529911623564145, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+  m_PrefabInstance: {fileID: 4679656564254759316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1350873040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350873034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45110de5083e1424f8a536df01b0b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1688452618
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +567,7 @@ GameObject:
   - component: {fileID: 1688452619}
   - component: {fileID: 1688452623}
   - component: {fileID: 1688452624}
+  - component: {fileID: 1688452625}
   m_Layer: 0
   m_Name: WebsocketFloor
   m_TagString: Untagged
@@ -636,6 +688,18 @@ MonoBehaviour:
   Enemyobject: {fileID: 0}
   webSocketClient: {fileID: 0}
   tower: {fileID: 0}
+--- !u!114 &1688452625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688452618}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45110de5083e1424f8a536df01b0b44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1714745415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2599089834379543340, guid: e2a7e93ce788b104dbc9940275a4fb69, type: 3}
@@ -958,7 +1022,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9131345087316671978, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 700493595}
+    - targetCorrespondingSourceObject: {fileID: 8145320936507957805, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1120628021}
+    - targetCorrespondingSourceObject: {fileID: 7412529911623564145, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1350873040}
   m_SourcePrefab: {fileID: 100100000, guid: 3d807ce500532c04f9835163d88a6b63, type: 3}
 --- !u!1001 &5370796054643492316
 PrefabInstance:
@@ -1036,6 +1109,22 @@ PrefabInstance:
       propertyPath: m_AttachTransform
       value: 
       objectReference: {fileID: 1124169905}
+    - target: {fileID: 6018847460781608946, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018847460781608946, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018847460781608946, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018847460781608946, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
+      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: guncontroler, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7711990767740999333, guid: f1006799a24157b4396bc0a87b007ef7, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.3522494
