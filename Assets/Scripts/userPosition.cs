@@ -9,7 +9,7 @@ public class PlayerPosition : MonoBehaviour
     {
         Vector3 headPosition = transform.position;
         webSocketClient = GameObject.Find("WebsocketFloor").GetComponent<WebSocketClient>();
-        SendPositionData sendPositionData = new SendPositionData(headPosition.x / 16, headPosition.y, headPosition.z / 20, "hero", "hero", true, "unity");
+        SendPositionData sendPositionData = new SendPositionData(headPosition.x / 16, headPosition.y, headPosition.z / 20, "hero", "hero", true, "unity", "uid");
     }
 
 
@@ -22,7 +22,7 @@ public class PlayerPosition : MonoBehaviour
             Debug.Log("position");
             Debug.Log(headPosition.x);
             Debug.Log(headPosition.z);
-            SendPositionData sendPositionData = new SendPositionData(headPosition.x / 16, headPosition.y, headPosition.z / 20, "hero", "hero", true, "unity");
+            SendPositionData sendPositionData = new SendPositionData(headPosition.x / 16, headPosition.y, headPosition.z / 20, "hero", "hero", true, "unity", "uid");
             webSocketClient.SendMessageToServer(sendPositionData);
             Debug.Log("Player Position: " + headPosition);
             span = 0;
