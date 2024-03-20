@@ -69,6 +69,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(tower.transform);
         distancespan += Time.deltaTime;
         transform.position += new Vector3(fspx * 0.2f, 0, fspz * 0.2f) * Time.deltaTime;
 
@@ -95,8 +96,11 @@ public class enemy : MonoBehaviour
         {
             Anim.CrossFade(DissolveState, 0.1f, 0, 0);
             enemyHP = enemyHP - 1;
+            SendPositionData sendPositionData = new SendPositionData(0, 0, 0, enemyHP.ToString(), "hp", true, "unity", "uid");
+            webSocketClient.SendMessageToServer(sendPositionData);
+
         }
-         if(collision.gameObject.tag == "katana"){
+        if (collision.gameObject.tag == "katana"){
       enemyHP = enemyHP - 4;
         }
     }
