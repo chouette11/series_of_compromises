@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bullet
   - tower
+  - katana
   layers:
   - Default
   - TransparentFX
