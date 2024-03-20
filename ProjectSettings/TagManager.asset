@@ -7,6 +7,7 @@ TagManager:
   - bullet
   - tower
   - katana
+  - enemy
   layers:
   - Default
   - TransparentFX
