@@ -7,6 +7,7 @@ using WebSocketSharp;
 
 public class enemy : MonoBehaviour
 {
+
     private Animator Anim;
     private CharacterController Ctrl;
     private Vector3 MoveDirection = Vector3.zero;
@@ -38,6 +39,8 @@ public class enemy : MonoBehaviour
 
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +69,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(tower.transform);
         distancespan += Time.deltaTime;
         transform.position += new Vector3(fspx * 0.5f, 0, fspz * 0.5f) * Time.deltaTime;
         if (enemyHP <= 0)
@@ -116,5 +120,5 @@ public class enemy : MonoBehaviour
         towerscript = tower.GetComponent<towescript>();
         towerscript.Hpmanage = false;
         AttackSpan = 0;
-    }
-}
+    }}
+
