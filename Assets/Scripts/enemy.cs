@@ -93,6 +93,9 @@ public class enemy : MonoBehaviour
             Anim.CrossFade(DissolveState, 0.1f, 0, 0);
             enemyHP = enemyHP - 1;
         }
+         if(collision.gameObject.tag == "katana"){
+      enemyHP = enemyHP - 4;
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -105,6 +108,7 @@ public class enemy : MonoBehaviour
                 Attack();
             }
         }
+
     }
 
     void Attack()
