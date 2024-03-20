@@ -8,6 +8,8 @@ public class WebSocketClient : MonoBehaviour
     // 受信した最新の位置データ
     public PositionData LatestPosition { get; set; }
 
+    public int weaponNumber = 0;
+
     void Start()
     {
         // WebSocketサーバーのURLを指定して接続
@@ -29,6 +31,14 @@ public class WebSocketClient : MonoBehaviour
                 {
                     LatestPosition = JsonUtility.FromJson<PositionData>(e.Data);
                     Debug.Log(LatestPosition.y.ToString());
+                }
+            } else {
+                if (e.Data.Contains("Open")) {
+                    weaponNumber = 0;
+                } else if (e.Data.Contains("Close")) {
+                    weaponNumber = 1;
+                } else if (e.Data.Contains("Pointer")) {
+                    weaponNumber = 2;
                 }
             }
         };
