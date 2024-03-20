@@ -8,4 +8,5 @@ public class PositionData
     public string typeText;
     public bool isVisible;
     public string sender;
+    public string uid;
 }

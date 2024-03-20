@@ -69,24 +69,23 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(tower.transform);
         distancespan += Time.deltaTime;
-        transform.position += new Vector3(fspx * 0.5f, 0, fspz * 0.5f) * Time.deltaTime;
-        if (enemyHP <= 0)
-        {
-            Position = transform.position;
-            SendPositionData sendPositionData = new SendPositionData(Position.x, Position.y, Position.z, id, "enemy", false, "unity");
-            webSocketClient.SendMessageToServer(sendPositionData);
-            Destroy(gameObject);
+        transform.position += new Vector3(fspx * 0.2f, 0, fspz * 0.2f) * Time.deltaTime;
 
-        }
         if (distancespan >= 0.01f)
         {
             Vector3 position = transform.position;
-            SendPositionData sendPositionData = new SendPositionData(position.x / 16, position.y, position.z / 20, id, "enemy", true, "unity");
+            SendPositionData sendPositionData = new SendPositionData(position.x / 16, position.y, position.z / 20, id, "enemy", enemyHP >= 0, "unity", "uid");
             webSocketClient.SendMessageToServer(sendPositionData);
             Distance();
             distancespan = 0;
+        }
+        if (enemyHP <= 0)
+        {
+            Position = transform.position;
+            SendPositionData sendPositionData = new SendPositionData(Position.x, Position.y, Position.z, id, "enemy", false, "unity", "uid");
+            webSocketClient.SendMessageToServer(sendPositionData);
+            Destroy(gameObject);
         }
     }
 
